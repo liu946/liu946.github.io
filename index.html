@@ -20,3 +20,22 @@ title: website
  	</div>
 	</div>
 
+
+	{% for post in site.posts %}
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+		<a href="{{ post.url }}">
+		      <img data-src="{{ site.url }}/image/{{ post.img }}" alt="{{ post.title }}">
+		</a>
+	      <div class="caption">
+		<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+		<p>日期：&nbsp;&nbsp;&nbsp;{{ post.time | date_to_long_string }}</p>
+		<p>.{{ post.dec }}</p>
+		<p><a href="{{ post.url }}" class="btn btn-primary" role="button">Have a look!</a></p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	{% endfor %}
+
