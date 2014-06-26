@@ -9,9 +9,9 @@ title: website
 		{% for post in site.posts %}
 		  <tr>
 		  {% if post.external_url == nil %}
-		    <td><a href="{{ post.url }}">{{ post.title }}</a></td><td><abbr>{{ site.time | date_to_long_string }}</abbr></td>
+		    <td><a href="{{ post.url }}">{{ post.title }}</a></td><td><abbr>{{ post.time | date_to_long_string }}</abbr></td>
 		  {% else %}
-		    <td><a href="{{ post.external_url }}">{{ post.title }}</a></td><td><abbr>{{ site.time | date_to_long_string }}</abbr></td>
+		    <td><a href="{{ post.external_url }}">{{ post.title }}</a></td><td><abbr>{{ post.time | date_to_long_string }}</abbr></td>
 		  {% endif %}
 		  </tr>
 		{% endfor %}
