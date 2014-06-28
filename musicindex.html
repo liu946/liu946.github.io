@@ -4,9 +4,9 @@ title: website
 ---
 	<div class="panel-heading">
 	<ul class="nav nav-tabs">
-	  <li class="active"><a href="{{ site.url }}/index.html">日志</a></li>
+	  <li><a href="{{ site.url }}/index.html">日志</a></li>
 	  <li><a href="{{ site.url }}/tecshare.html">技术分享</a></li>
-	<li><a href="{{ site.url }}/musicindex.html">音乐</a></li>
+	  <li class="active"><a href="{{ site.url }}/musicindex.html">音乐</a></li>
 	  <li><a href="{{ site.url }}/showindex.html">SHOW</a></li>
 	</ul>
 	</div>
@@ -15,13 +15,13 @@ title: website
 <div class="panel-body">
 <div class="row">
 		{% for category in site.categories %}
-		{% if category.first == 'test' %}
+		{% if category.first == 'music' %}
 		{% for post in category.last %}
 		  
 	  		<div class="col-sm-6 col-md-4">
 	   		 <div class="thumbnail">
 				{% if post.img == nil %}
-				    	 	 <img src="{{ site.url }}/image/default.png"   style="width:300px;height:300px;">
+				    	 	 <img src="{{ site.url }}/image/musicdefimg.jpg"   style="width:300px;height:300px;">
 				{% else %}
 				    	 	 <img src="{{ site.url }}/image/{{ post.img }}"  style="width:300px;height:300px;">
 				{% endif %}
@@ -40,10 +40,9 @@ title: website
 				{% endif %}
 				</div>
 			{% if post.external_url == nil %}
-				<p><a href="{{ post.url }}" class="btn btn-primary" role="button">
-				<span class="glyphicon glyphicon-search"></span></a></p>
+				<p><a href="{{ post.url }}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-play-circle"></span></a></p>
 			{% else %}
-				<p><a href="{{ post.external_url }}" class="btn btn-primary" role="button">转到</a></p>
+				<p><a href="{{ post.external_url }}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-play-circle"></span></a></p>
 			{% endif %}
 		</div>
 		</div>

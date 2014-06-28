@@ -4,8 +4,8 @@ title: website
 ---
 	<div class="panel-heading">
 	<ul class="nav nav-tabs">
-	  <li class="active"><a href="{{ site.url }}/index.html">日志</a></li>
-	  <li><a href="{{ site.url }}/tecshare.html">技术分享</a></li>
+	  <li><a href="{{ site.url }}/index.html">日志</a></li>
+	  <li class="active"><a href="{{ site.url }}/tecshare.html">技术分享</a></li>
 	<li><a href="{{ site.url }}/musicindex.html">音乐</a></li>
 	  <li><a href="{{ site.url }}/showindex.html">SHOW</a></li>
 	</ul>
@@ -15,7 +15,7 @@ title: website
 <div class="panel-body">
 <div class="row">
 		{% for category in site.categories %}
-		{% if category.first == 'test' %}
+		{% if category.first == 'tec' %}
 		{% for post in category.last %}
 		  
 	  		<div class="col-sm-6 col-md-4">
@@ -40,8 +40,7 @@ title: website
 				{% endif %}
 				</div>
 			{% if post.external_url == nil %}
-				<p><a href="{{ post.url }}" class="btn btn-primary" role="button">
-				<span class="glyphicon glyphicon-search"></span></a></p>
+				<p><a href="{{ post.url }}" class="btn btn-primary" role="button">进入</a></p>
 			{% else %}
 				<p><a href="{{ post.external_url }}" class="btn btn-primary" role="button">转到</a></p>
 			{% endif %}
