@@ -2,5 +2,5 @@ auto: true
 permalink: /blog/:year/:month/:day/:title
 pygments: true
 server: true
-paginate: 5
+paginate: 8
 
