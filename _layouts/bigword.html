@@ -1,45 +1,22 @@
-{% include head.html %}
-<body>
+---
+layout: plain
+---
 
-{% include pageheader.html %}
+	{{ content }}
 
-   <!-- Style Guide Section
-   ================================================== -->
-   <section id="styles" style="padding: 90px 0 72px; background: #fff;">
-
-      <div class="row add-bottom">
-
-         <div id='plaindiv' class="twelve columns">
-
-            <h1 style='font-size: 50px;font-weight: bold;'>{{ page.title }}</h1>
-			<div><p class="info" id='nochange'><i>{{ page.dec }}</i> <span>&bull;</span> <em class="date">{{ page.date | date_to_long_string }}</em></p></div>
-			{{ content }}
-            <hr>
-
-         </div>
-
-      </div> <!-- Row End-->
-
-   </section> <!-- Resume Section End-->
-
-   {% include footer.html %}
-
-      <!-- Java Script
-   ================================================== -->
-  {% include js.html %}
 	<script type="text/javascript">
-		$("#plaindiv p").each(function () {
-			if ($(this).attr('id')!='nochange') {
-				$(this).attr('class','drop-cap');
-			};
-		});		
-		$("#plaindiv p").each(function () {
-			
-			$(this).css('margin-top','5%');
-			$(this).css('font-size','120%');
-		});
-		$('.info').css('font-size','150%')
-	</script>
-</body>
+      $("#plaindiv p").each(function()
+      {
+         if ($(this).attr('id')!='nochange') {
+            $(this).attr('class','drop-cap');
+         };
+      });      
+      $("#plaindiv p").each(function()
+      {
+         
+         $(this).css('margin-top','5%');
+         $(this).css('font-size','120%');
+      });
+      $('.info').css('font-size','150%');
 
-</html>
+	</script>
