@@ -1,0 +1,71 @@
+{% include head.html %}
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="plain"style='min-height: 48px;height:48px'>
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+	         <li><a class="smoothscroll" href="#styles">Style Guide</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+   </header> <!-- Header End -->
+
+   <!-- Style Guide Section
+   ================================================== -->
+   <section id="styles" style="padding: 90px 0 72px; background: #fff;">
+
+      <div class="row add-bottom">
+
+         <div id='plaindiv' class="twelve columns">
+
+            <h1 style='font-size: 50px;font-weight: bold;'>{{ page.title }}</h1>
+			<div><p class="info" id='nochange'><i>{{ page.dec }}</i> <span>&bull;</span> <em class="date">{{ page.date | date_to_long_string }}</em></p></div>
+			{{ content }}
+            <hr>
+
+         </div>
+
+      </div> <!-- Row End-->
+
+   </section> <!-- Resume Section End-->
+
+{% include footer.html %}
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="/js/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="/js/jquery.flexslider.js"></script>
+   <script src="/js/waypoints.js"></script>
+   <script src="/js/jquery.fittext.js"></script>
+   <script src="/js/magnific-popup.js"></script>
+   <script src="/js/init.js"></script>
+	<script type="text/javascript">
+		$("#plaindiv p").each(function () {
+			if ($(this).attr('id')!='nochange') {
+				$(this).attr('class','drop-cap');
+			};
+		});		
+		$("#plaindiv p").each(function () {
+			
+			$(this).css('margin-top','5%');
+			$(this).css('font-size','120%');
+		});
+		$('.info').css('font-size','150%')
+
+
+	</script>
+</body>
+
+</html>
