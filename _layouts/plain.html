@@ -31,7 +31,17 @@
 
       <!-- Java Script
    ================================================== -->
-  
+  {% include js.html %}
+
+<link rel="stylesheet" href="/prettify/prettify.css">
+<script src="/prettify/prettify.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $("pre").addClass("prettyprint ");
+    prettyPrint();
+  });
+</script>
+
 </body>
 
 </html>
