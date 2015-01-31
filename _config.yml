@@ -12,3 +12,5 @@ github_username:  liu946
 
 # Build settings
 markdown: kramdown
+
+paginate: 10
