@@ -1,9 +1,13 @@
 ---
 layout: index
 ---
-
+<div style='display: none;' id='plain'>
+		
+</div>
 <article id="post__content">
   <h1 id="post__title" data-identifier="{{ page.date | date: "%Y%m%d" }}">{{ page.title }}</h1>
+  <div><p class="info" id='nochange' style='margin: 5%;'><i>{{ page.dec }}</i> <span>&bull;</span> <em class="date">{{ page.date | date_to_long_string }}</em></p></div>
+
   {{ content }}
 </article> <!-- end #post__content -->
 

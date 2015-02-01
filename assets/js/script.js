@@ -41,21 +41,48 @@ tag1.on('click', function() {
     $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
   }
 });
+function isChrome(){
+    return navigator.userAgent.indexOf('Chrome') > -1;
+}
 
 // Enable fullscreen.
 $('#js-fullscreen').on('click', function() {
   if (button.hasClass('fullscreen')) {
-    sidebar.removeClass('fullscreen');
-    button.removeClass('fullscreen');
-    content.delay(300).queue(function(){
-      $(this).removeClass('fullscreen').dequeue();
-    });
+      //add
+      if (! isChrome()) {
+        $('article').stop().animate({fontSize:'100%'});
+      };
+      $('.plain').hide('slow').queue(function(){
+        sidebar.removeClass('fullscreen');
+        button.removeClass('fullscreen');
+
+        content.delay(300).queue(function(){
+          $(this).removeClass('fullscreen').dequeue();   
+        });
+        $(this).dequeue();
+      });
+      //
   } else {
     sidebar.addClass('fullscreen');
     button.addClass('fullscreen');
     content.delay(200).queue(function(){
-      $(this).addClass('fullscreen').dequeue();
+      if (! isChrome()) {
+        $('article').stop().animate({fontSize:'120%'});
+      };
+      $(this).addClass('fullscreen').dequeue().delay(200).queue(function(){
+        p=$('.plain');
+        height=p.css('height');
+        p.css('height','0px');
+        p.show();
+        p.animate({'height':height});
+        $(this).dequeue();
+      });
+
     });
+
+      //add
+        
+      //     
   }
 });
 
