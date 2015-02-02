@@ -52,6 +52,7 @@ $('#js-fullscreen').on('click', function() {
       if (! isChrome()) {
         $('article').stop().animate({fontSize:'100%'});
       };
+      $('.index').show('slow');
       $('.plain').hide('slow').queue(function(){
         sidebar.removeClass('fullscreen');
         button.removeClass('fullscreen');
@@ -70,6 +71,7 @@ $('#js-fullscreen').on('click', function() {
         $('article').stop().animate({fontSize:'120%'});
       };
       $(this).addClass('fullscreen').dequeue().delay(200).queue(function(){
+        $('.index').hide('slow');
         p=$('.plain');
         height=p.css('height');
         p.css('height','0px');
