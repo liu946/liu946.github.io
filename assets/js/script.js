@@ -17,6 +17,7 @@ if ($(window).width() <= 1280) {
     tag4       = $('.book'),
     tag5       = $('.act'),
     tag6       = $('.tech');
+    tag7       = $('.tool');
 var sidebar    = $('#sidebar'),
     container  = $('#post'),
     content    = $('#pjax'),
@@ -30,7 +31,7 @@ var clickHandler = function(k) {
     window['tag'+k].delay(50).fadeIn(350);
   }
 };
-for (var i = 1; i <= 6; i++) {
+for (var i = 1; i <= 7; i++) {
   $('#js-label' + i).on('click', clickHandler(i));
 }
 
@@ -217,7 +218,7 @@ function afterPjax() {
       var ID = "",
           alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-      for(var i=0; i < 5; i++) {
+      for(var i=0; i < 6; i++) {
         ID += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
       }
       return ID;
