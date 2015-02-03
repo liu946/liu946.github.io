@@ -71,9 +71,14 @@ function getPar(par){
 function urlfirststr() {
     //获取当前URL
     var local_url = document.location.href; 
+    var get = local_url.indexOf("#");
+    if (get!= -1) {local_url = local_url.slice(0,get);}
+    get = local_url.indexOf("?");
+    if (get!= -1) {local_url = local_url.slice(0,get);}
+    
     local_url+='/';
     //获取要取得的achieve参数位置
-    var get = local_url.indexOf("//");
+    get = local_url.indexOf("//");
     local_url = local_url.slice(get+2);
     get = local_url.indexOf("/");
     local_url = local_url.slice(get+1);
