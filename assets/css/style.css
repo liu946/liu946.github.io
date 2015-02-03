@@ -518,7 +518,7 @@ iframe {
   display: block;
   overflow: hidden; }
   .post__toc-li:before {
-    content: "\e806";
+    content: "●";
     margin-right: 5px; }
   .post__toc-li > a:hover {
     color: #2eb695; }
