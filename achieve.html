@@ -1,0 +1,77 @@
+---
+layout: index
+title: 归档
+---
+
+<article id="post__content">
+  <h1 id="post__title">归档</h1>
+</article> <!-- end #post__content --> 
+<style type="text/css">
+	legend{
+		font-weight: bold;
+		font-size: 20px;
+	}
+	article li{
+		font-size: 15px;
+	}
+	a.pjaxlink:hover{
+		color: #29a284;
+		font-size: bold;
+	}
+	a.pjaxlink{
+		color: #74B2A2;
+	}
+	hr{
+		height: 1px;
+		background: #d5d5d5;
+		border: none;
+	}
+
+</style>
+<article>
+{% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture this_month %}{{ post.date | date: "%m" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+    {% capture next_month %}{{ post.previous.date | date: "%m" }}{% endcapture %}
+  	
+    {% if forloop.first %}
+    	<hr>
+      <legend id="{{this_year}}-{{this_month}}">{{this_year}}年-{{this_month}}月</legend>
+      <ul>
+    {% endif %}
+    <li><span>{{ post.date | date: "%Y年-%m月-%d日" }}</span> &raquo; 
+      <a class="pjaxlink" href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  
+    {% if forloop.last %}
+      </ul>
+    {% else %}
+      {% if this_year != next_year %}
+        </ul>
+        <hr>
+        <legend id="{{next_year}}-{{next_month}}">{{next_year}}年-{{next_month}}月</legend>
+        <ul>
+      {% else %}    
+        {% if this_month != next_month %}
+        </ul>
+        <hr>
+        <legend id="{{next_year}}-{{next_month}}">{{next_year}}年-{{next_month}}月</legend>
+        <ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+{% endfor %}
+</article> <!-- end #post__content -->
+<div class='index'>
+<div id="post__share" >
+  <a id="icon-twitter" class="fontello" href="http://user.qzone.qq.com/570926881" target="_blank"><i class="fa fa-qq"></i></a>
+  <a id="icon-cc" class="fontello" href="http://www.github.com/liu946" target="_blank"><i class="fa fa-github-alt"></i></a>
+  <a id="icon-weibo" class="fontello" href="http://www.cnblogs.com/liu946/" target="_blank">博</a>
+</div> <!-- end #post__share -->
+
+
+
+
+<p id="copyright" style='border-top: 2px solid rgba(229, 232, 236, 0);'>Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Author <a href="/" target="_blank">Micheal·Liu</a></p>
+</div>
