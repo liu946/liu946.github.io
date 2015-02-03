@@ -1,8 +1,14 @@
 /*!--------------------------------*\
-   3-Ghost Theme
-   @author Peiwen Lu (P233)
-   https://github.com/P233/3-Ghost
+   @author Micheal Liu
+   based on :3-Ghost Theme(https://github.com/P233/3-Ghost);
 \*---------------------------------*/
+/*---------------------------------*\
+   MainChangedStyle
+\*---------------------------------*/
+article > p,h1{
+  font-family: consolas,Microsoft Yahei;
+}
+
 /*---------------------------------*\
    Fonts
 \*---------------------------------*/
@@ -942,7 +948,7 @@ pre {
   background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
   background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
   background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.04) 50%);
   background-size: 3em 3em;
   background-origin: content-box;
   overflow: auto;

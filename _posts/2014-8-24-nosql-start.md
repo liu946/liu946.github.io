@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: plain
 title: 初识NoSQL 快速认识NoSQL数据库
 dec: 快速认识NoSQL数据库
 excerpt:  做了一年的大一年度项目了，对于关系型数据库结构还是有些了解了，有的时候还是觉得这种二维表不是很顺手。在看过一篇文章之后，对NoSQL有了初步的了解，（https://keen.io/blog/53958349217/analytics-for-hackers-how-to-think-about-e

@@ -20,7 +20,7 @@ layout: home
             {% if post.category ==  'act' %}
                <div class="twelve columns">
 
-                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}">{{ post.title }}</a> </h3>
+                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}?show=full">{{ post.title }}</a> </h3>
                   <p class="info"> {{ post.dec }} <span>&bull;</span> <em class="date">{{ post.date | date_to_long_string }}</em></p>
                   <p>
                   {{ post.excerpt }}... <br><a rel="external" href="{{ post.exurl }}">转到博客查看</a>
@@ -50,7 +50,7 @@ layout: home
           
                <div class="twelve columns">
 
-                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}">{{ post.title }}</a> </h3>
+                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}?show=full">{{ post.title }}</a> </h3>
                   <p class="info"> {{ post.dec }} <span>&bull;</span> <em class="date">{{ post.date | date_to_long_string }}</em></p>
                   <p>
                   {{ post.excerpt }}... <br><a rel="external" href="{{ post.exurl }}">转到博客查看</a>
@@ -81,7 +81,7 @@ layout: home
             {% if post.category == 'tech' %}
                <div class="twelve columns">
 
-                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}">{{ post.title }}</a> </h3>
+                  <h3 style='font-weight: bold;'> <a href="{{ post.url }}?show=full">{{ post.title }}</a> </h3>
                   <p class="info"> {{ post.dec }} <span>&bull;</span> <em class="date">{{ post.date | date_to_long_string }}</em></p>
                   <p>
                   {{ post.excerpt }}... <br><a rel="external" href="{{ post.exurl }}">转到博客查看</a>
