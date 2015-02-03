@@ -8,7 +8,9 @@
 article > p,h1{
   font-family: consolas,Microsoft Yahei;
 }
-
+#go-top a:hover {
+background: #11ABB0;
+}
 /*---------------------------------*\
    Fonts
 \*---------------------------------*/

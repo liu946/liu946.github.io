@@ -1,9 +1,9 @@
 
 /*!--------------------------------*\
-   3-Jekyll Theme
-   @author Peiwen Lu (P233)
-   https://github.com/P233/3-Jekyll
+   @author Micheal Liu
+   based on :3-Ghost Theme(https://github.com/P233/3-Ghost);
 \*---------------------------------*/
+
 
 // Detect window size, if less than 1280px add class 'mobile' to sidebar therefore it will be auto hide when trigger the pjax request in small screen devices.
 if ($(window).width() <= 1280) {
@@ -41,6 +41,12 @@ tag1.on('click', function() {
     $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
   }
 });
+/*
+Micheal liu changed in 2015.2
+for changing two themes 
+
+*/
+// private function used for the next section
 function isChrome(){
     return navigator.userAgent.indexOf('Chrome') > -1;
 }
@@ -61,6 +67,37 @@ function getPar(par){
     }
     return get_par;
 }
+function urlfirststr() {
+    //获取当前URL
+    var local_url = document.location.href; 
+    local_url+='/';
+    //获取要取得的achieve参数位置
+    var get = local_url.indexOf("//");
+    local_url = local_url.slice(get+2);
+    get = local_url.indexOf("/");
+    local_url = local_url.slice(get+1);
+    get = local_url.indexOf("/");
+    local_url = local_url.slice(0,get);
+    return local_url;
+}
+/*----------------------------------------------------*/
+/* Smooth Scrolling
+------------------------------------------------------ */
+$(function() {
+   $('.smoothscroll').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('#post').stop().animate({
+          'scrollTop': 0
+      }, 800, 'swing', function () {
+          window.location.hash = target;
+      });
+  });
+  
+})
 // Enable fullscreen.
   // show mode 
   if(getPar('show')=='full')
@@ -83,6 +120,7 @@ function getPar(par){
         $('article').css('font-size','120%');
       };
    }
+   // change style (index,plain)
 $('#js-fullscreen').on('click', function() {
   if (button.hasClass('fullscreen')) {
       //add
@@ -97,6 +135,7 @@ $('#js-fullscreen').on('click', function() {
         content.delay(300).queue(function(){
           $(this).removeClass('fullscreen').dequeue();   
         });
+        //$('button#js-fullscreen').stop().animate({'margin-top':'0px'});
         $(this).dequeue();
       });
       //
@@ -109,11 +148,15 @@ $('#js-fullscreen').on('click', function() {
       };
       $(this).addClass('fullscreen').dequeue().delay(200).queue(function(){
         $('.index').hide('slow');
-        p=$('.plain');
-        height=p.css('height');
-        p.css('height','0px');
-        p.show();
-        p.animate({'height':'48px'});
+        if(urlfirststr()!='achieve.html'){
+          p=$('.plain');
+          height=p.css('height');
+          p.css('height','0px');
+          p.show();
+          p.animate({'height':'48px'});          
+        }
+
+        //$('button#js-fullscreen').animate({'margin-top':'50px'});
         $(this).dequeue();
       });
 
@@ -124,7 +167,9 @@ $('#js-fullscreen').on('click', function() {
       //     
   }
 });
-
+/*
+changes end
+*/
 $('#mobile-avatar').on('click', function(){
   $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
 });
