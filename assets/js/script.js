@@ -44,8 +44,45 @@ tag1.on('click', function() {
 function isChrome(){
     return navigator.userAgent.indexOf('Chrome') > -1;
 }
-
+function getPar(par){
+    //获取当前URL
+    var local_url = document.location.href; 
+    //获取要取得的get参数位置
+    var get = local_url.indexOf(par +"=");
+    if(get == -1){
+        return false;   
+    }   
+    //截取字符串
+    var get_par = local_url.slice(par.length + get + 1);    
+    //判断截取后的字符串是否还有其他get参数
+    var nextPar = get_par.indexOf("&");
+    if(nextPar != -1){
+        get_par = get_par.slice(0, nextPar);
+    }
+    return get_par;
+}
 // Enable fullscreen.
+  // show mode 
+  if(getPar('show')=='full')
+   {
+
+      
+      sidebar.addClass('fullscreen');
+      button.addClass('fullscreen');
+      $('.plain').css('display','');
+      $('.index').css('display','none');
+      content.delay(300).queue(function() {
+        document.getElementById('sidebar').style.display='';
+        $(this).addClass('fullscreen');
+        $(this).dequeue();
+      });
+
+      
+
+      if (! isChrome()) {
+        $('article').css('font-size','120%');
+      };
+   }
 $('#js-fullscreen').on('click', function() {
   if (button.hasClass('fullscreen')) {
       //add
@@ -54,7 +91,7 @@ $('#js-fullscreen').on('click', function() {
       };
       $('.index').show('slow');
       $('.plain').hide('slow').queue(function(){
-        sidebar.removeClass('fullscreen');
+        $("#sidebar").removeClass('fullscreen');
         button.removeClass('fullscreen');
 
         content.delay(300).queue(function(){
@@ -64,7 +101,7 @@ $('#js-fullscreen').on('click', function() {
       });
       //
   } else {
-    sidebar.addClass('fullscreen');
+    $("#sidebar").addClass('fullscreen');
     button.addClass('fullscreen');
     content.delay(200).queue(function(){
       if (! isChrome()) {
@@ -76,7 +113,7 @@ $('#js-fullscreen').on('click', function() {
         height=p.css('height');
         p.css('height','0px');
         p.show();
-        p.animate({'height':height});
+        p.animate({'height':'48px'});
         $(this).dequeue();
       });
 
