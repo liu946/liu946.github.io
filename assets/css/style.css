@@ -8,6 +8,9 @@
 article > p,h1{
   font-family: consolas,Microsoft Yahei;
 }
+article >p{
+  text-indent: 2em;
+}
 #go-top a:hover {
 background: #11ABB0;
 }

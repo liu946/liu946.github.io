@@ -1,22 +1,20 @@
 ---
 layout: plain
 ---
+<style type="text/css">
+article >p:first-letter {
+float: left;
+font-size: 2em;
+line-height: 1;
+font-weight: bold;
+margin-left: 0.1em;
+margin-right: 0.2em;
+margin-top: 0.25em;
+color: rgba(0,0,0,0.5);
 
+}
+article>p{
+   text-indent: 0em;
+}
+</style>
 	{{ content }}
-
-	<script type="text/javascript">
-      $("#plaindiv p").each(function()
-      {
-         if ($(this).attr('id')!='nochange') {
-            $(this).attr('class','drop-cap');
-         };
-      });      
-      $("#plaindiv p").each(function()
-      {
-         
-         $(this).css('margin-top','5%');
-         $(this).css('font-size','120%');
-      });
-      $('.info').css('font-size','150%');
-
-	</script>
