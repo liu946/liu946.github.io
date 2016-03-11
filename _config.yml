@@ -1,7 +1,8 @@
 # Site settings
 title: Personal Website Liu
 email: liuyang570926881@gmail.com
-description: > liu946, IT, thought, blog,
+description: > # liu946, IT, thought, blog,
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://liu946.github.io" # the base hostname & protocol for your site
 twitter_username: 
@@ -12,4 +13,5 @@ markdown: kramdown
 
 highlighter: pygments
 
+gems: [jekyll-paginate]
 paginate: 10
