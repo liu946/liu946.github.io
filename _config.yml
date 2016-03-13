@@ -11,7 +11,7 @@ github_username:  liu946
 # Build settings
 markdown: kramdown
 
-highlighter: pygments
+highlighter: rouge
 
 gems: [jekyll-paginate]
 paginate: 10
