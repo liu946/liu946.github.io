@@ -1,8 +1,7 @@
 ---
 layout: plain
-title: RL Chapter14 Psychology Report
-dec: Share Reading Reading "ACL17 DeepSRL"
-excerpt: 一个新的SRL模型，4层双向LSTM + highway + RNN dropout
+title: Share Reading Reading "ACL17 DeepSRL"
+dec: 一个新的SRL模型，4层双向LSTM + highway + RNN dropout
 category: tech
 ---
 
