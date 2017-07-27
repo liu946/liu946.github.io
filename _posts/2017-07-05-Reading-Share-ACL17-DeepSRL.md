@@ -5,6 +5,7 @@ dec: 一个新的SRL模型，4层双向LSTM + highway + RNN dropout
 category: tech
 ---
 
+A new srl model, 4 layer bi-lstm + highway + RNN dropout.
 
 ### Model
 
