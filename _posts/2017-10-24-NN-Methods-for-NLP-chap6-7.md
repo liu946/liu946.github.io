@@ -1,6 +1,6 @@
 ---
 layout: plain
-title: Share Reading Reading "TACL16 LSTM's Syntax-Sensitive Dependencies Ability"
+title: SCIR Club Share  "NN Method for NLP Chap6-7"
 dec: 俱乐部分享。神经机器学习。
 category: tech
 ---
