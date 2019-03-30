@@ -1,5 +1,5 @@
 ---
-layout: bigword
+layout: plain
 title: AI爆炸了，技术准备好了吗？
 dec: AI爆炸了，技术准备好了吗？
 excerpt: 当人们渐渐清楚的认识了AI的能力之后这波“AI时代“可能就会过去了吧。
